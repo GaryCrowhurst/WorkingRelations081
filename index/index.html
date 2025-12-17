@@ -1,0 +1,3227 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Relationships in Automotive Environment | Unit 081</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+
+        html {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        /* CSS Variables for Themes */
+        :root {
+            /* Light Theme (Default) */
+            --bg-gradient-start: #f0f4f8;
+            --bg-gradient-end: #d9e2ec;
+            --card-bg: #ffffff;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --primary-color: #3182ce;
+            --primary-light: #4299e1;
+            --primary-dark: #2c5282;
+            --accent-color: #38a169;
+            --warning-bg: #fef5e7;
+            --warning-border: #f39c12;
+            --warning-text: #7d6608;
+            --tip-bg: #e6fffa;
+            --tip-border: #38b2ac;
+            --tip-text: #234e52;
+            --key-bg: #ebf8ff;
+            --key-border: #3182ce;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-hover: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Dark Theme */
+        body.theme-dark {
+            --bg-gradient-start: #1a202c;
+            --bg-gradient-end: #2d3748;
+            --card-bg: #2d3748;
+            --text-primary: #e2e8f0;
+            --text-secondary: #cbd5e0;
+            --primary-color: #4299e1;
+            --primary-light: #63b3ed;
+            --primary-dark: #3182ce;
+            --accent-color: #48bb78;
+            --warning-bg: #744210;
+            --warning-border: #f6ad55;
+            --warning-text: #fefcbf;
+            --tip-bg: #234e52;
+            --tip-border: #4fd1c5;
+            --tip-text: #e6fffa;
+            --key-bg: #2c5282;
+            --key-border: #4299e1;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-hover: rgba(0, 0, 0, 0.5);
+        }
+
+        /* High Contrast Theme */
+        body.theme-contrast {
+            --bg-gradient-start: #ffffff;
+            --bg-gradient-end: #ffffff;
+            --card-bg: #ffffff;
+            --text-primary: #000000;
+            --text-secondary: #000000;
+            --primary-color: #0000ff;
+            --primary-light: #0000cc;
+            --primary-dark: #000099;
+            --accent-color: #008000;
+            --warning-bg: #ffff00;
+            --warning-border: #000000;
+            --warning-text: #000000;
+            --tip-bg: #00ff00;
+            --tip-border: #000000;
+            --tip-text: #000000;
+            --key-bg: #e0e0ff;
+            --key-border: #000000;
+            --shadow: rgba(0, 0, 0, 0.3);
+            --shadow-hover: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Dyslexia Friendly Theme */
+        body.theme-dyslexia {
+            --bg-gradient-start: #faf8f1;
+            --bg-gradient-end: #f5f3e8;
+            --card-bg: #fffef7;
+            --text-primary: #3e3e3e;
+            --text-secondary: #5a5a5a;
+            --primary-color: #0066cc;
+            --primary-light: #3385d6;
+            --primary-dark: #004c99;
+            --accent-color: #2d9f4f;
+            --warning-bg: #fff9e6;
+            --warning-border: #e6a700;
+            --warning-text: #664d00;
+            --tip-bg: #e8f5e9;
+            --tip-border: #2d9f4f;
+            --tip-text: #1b5e20;
+            --key-bg: #e3f2fd;
+            --key-border: #0066cc;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --shadow-hover: rgba(0, 0, 0, 0.12);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Blue Calm Theme */
+        body.theme-blue {
+            --bg-gradient-start: #e0f2fe;
+            --bg-gradient-end: #bae6fd;
+            --card-bg: #ffffff;
+            --text-primary: #0c4a6e;
+            --text-secondary: #075985;
+            --primary-color: #0284c7;
+            --primary-light: #0ea5e9;
+            --primary-dark: #0369a1;
+            --accent-color: #0891b2;
+            --warning-bg: #fef3c7;
+            --warning-border: #f59e0b;
+            --warning-text: #78350f;
+            --tip-bg: #ccfbf1;
+            --tip-border: #14b8a6;
+            --tip-text: #134e4a;
+            --key-bg: #dbeafe;
+            --key-border: #0284c7;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-hover: rgba(0, 0, 0, 0.15);
+        }
+
+        /* Green Nature Theme */
+        body.theme-green {
+            --bg-gradient-start: #ecfdf5;
+            --bg-gradient-end: #d1fae5;
+            --card-bg: #ffffff;
+            --text-primary: #064e3b;
+            --text-secondary: #065f46;
+            --primary-color: #059669;
+            --primary-light: #10b981;
+            --primary-dark: #047857;
+            --accent-color: #0d9488;
+            --warning-bg: #fef3c7;
+            --warning-border: #f59e0b;
+            --warning-text: #78350f;
+            --tip-bg: #ccfbf1;
+            --tip-border: #14b8a6;
+            --tip-text: #134e4a;
+            --key-bg: #d1fae5;
+            --key-border: #059669;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-hover: rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* QR Code Styling */
+        .qr-code {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            border: 3px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 5px;
+            background: white;
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .qr-text {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        header {
+            position: relative;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px 160px 30px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .assessment-code {
+            background: var(--key-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-top: 10px;
+        }
+
+        /* Theme Selector Styles */
+        .theme-selector {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .theme-selector h3 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .theme-selector p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .theme-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+        }
+
+        .theme-btn {
+            padding: 12px 20px;
+            border: 2px solid var(--primary-color);
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .theme-btn.active {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+
+        .theme-btn-icon {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* Print Info Box */
+        .print-info {
+            background: var(--tip-bg);
+            border: 2px solid var(--tip-border);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .print-info h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .print-info p {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin: 5px 0;
+        }
+
+        .print-info strong {
+            color: var(--primary-dark);
+        }
+
+        nav {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        nav h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-weight: 600;
+            cursor: pointer;
+            display: block;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--shadow-hover);
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            border-bottom: 3px solid var(--primary-dark);
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .section h4 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .key-point {
+            background: var(--key-bg);
+            border-left: 4px solid var(--key-border);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            color: var(--warning-text);
+        }
+
+        .tip-box {
+            background: var(--tip-bg);
+            border-left: 4px solid var(--tip-border);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            color: var(--tip-text);
+        }
+
+        /* Diagram Styles */
+        .diagram-container {
+            background: var(--card-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .diagram-title {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .org-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .org-level {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .org-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            min-width: 150px;
+            box-shadow: 0 4px 8px var(--shadow);
+            position: relative;
+        }
+
+        .org-box.level-1 {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+        }
+
+        .org-box.level-2 {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+        }
+
+        .org-box.level-3 {
+            background: linear-gradient(135deg, var(--primary-light) 0%, #63b3ed 100%);
+        }
+
+        .org-connector {
+            width: 2px;
+            height: 15px;
+            background: var(--primary-color);
+            margin: 0 auto;
+        }
+
+        /* Department Layout */
+        .dept-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .dept-box {
+            background: var(--key-bg);
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .dept-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .dept-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .dept-name {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        /* Communication Flow Diagram */
+        .comm-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .comm-node {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            min-width: 120px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .comm-arrow {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* Responsibility Matrix */
+        .resp-matrix {
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+            gap: 1px;
+            background: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .resp-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .resp-cell {
+            background: var(--card-bg);
+            padding: 12px;
+            text-align: center;
+        }
+
+        .resp-role {
+            background: var(--key-bg);
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid var(--text-secondary);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: var(--key-bg);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: inset 0 0 10px var(--shadow);
+        }
+
+        .table-container::after {
+            content: "← Swipe to see more →";
+            display: none;
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding: 5px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .table-container::after {
+                display: block;
+            }
+        }
+
+        .checklist {
+            background: var(--key-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .checklist-item {
+            padding: 10px;
+            margin: 8px 0;
+            background: var(--card-bg);
+            border-radius: 5px;
+            border-left: 3px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .checklist-item:before {
+            content: "✓";
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 15px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px var(--shadow-hover);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            background: var(--accent-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px var(--shadow-hover);
+            transition: transform 0.3s;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 15px;
+                margin-bottom: 15px;
+            }
+
+            .qr-code {
+                width: 80px;
+                height: 80px;
+                top: 10px;
+                right: 10px;
+                border-width: 2px;
+            }
+
+            .qr-text {
+                font-size: 0.6rem;
+                bottom: -20px;
+            }
+
+            h1 {
+                font-size: 1.4rem;
+                line-height: 1.3;
+                padding-right: 90px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .assessment-code {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            nav {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            nav h2 {
+                font-size: 1.2rem;
+            }
+
+            .theme-selector {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .theme-selector h3 {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .theme-selector p {
+                font-size: 0.85rem;
+                margin-bottom: 12px;
+            }
+
+            .print-info {
+                padding: 12px 15px;
+                margin-bottom: 15px;
+            }
+
+            .print-info h4 {
+                font-size: 1rem;
+                margin-bottom: 6px;
+            }
+
+            .print-info p {
+                font-size: 0.85rem;
+            }
+
+            .theme-buttons {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .theme-btn {
+                padding: 10px;
+                font-size: 0.85rem;
+            }
+
+            .theme-btn-icon {
+                font-size: 1rem;
+                margin-right: 5px;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .nav-button {
+                padding: 12px;
+                font-size: 0.95rem;
+                min-height: 44px;
+            }
+
+            .section {
+                padding: 20px 15px;
+                margin-bottom: 15px;
+            }
+
+            .section h2 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .section h3 {
+                font-size: 1.15rem;
+                margin-top: 20px;
+                margin-bottom: 12px;
+            }
+
+            .section h4 {
+                font-size: 1.05rem;
+                margin-top: 15px;
+            }
+
+            .dept-layout {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .org-box {
+                min-width: 120px;
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.3rem;
+            }
+
+            .print-btn {
+                width: 45px;
+                height: 45px;
+                bottom: 75px;
+                right: 20px;
+                font-size: 1.3rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+                min-width: 500px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+
+        /* Extra small devices */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.25rem;
+            }
+
+            .section h2 {
+                font-size: 1.2rem;
+            }
+
+            .section h3 {
+                font-size: 1.1rem;
+            }
+
+            .nav-button {
+                font-size: 0.9rem;
+            }
+
+            table {
+                font-size: 0.8rem;
+                min-width: 450px;
+            }
+
+            .dept-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles - Handout Format */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 10pt;
+                line-height: 1.3;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+
+            header {
+                padding: 10px 120px 10px 10px;
+                box-shadow: none;
+                border: 2px solid #000;
+                page-break-after: avoid;
+                margin-bottom: 10px;
+                background: white !important;
+            }
+
+            h1 {
+                font-size: 16pt;
+                margin-bottom: 3px;
+                color: #000 !important;
+            }
+
+            .subtitle {
+                font-size: 10pt;
+                margin-bottom: 2px;
+            }
+
+            .assessment-code {
+                font-size: 9pt;
+                background: #f0f0f0 !important;
+                color: #000 !important;
+                padding: 3px 8px;
+            }
+
+            .qr-code {
+                width: 90px;
+                height: 90px;
+                top: 10px;
+                right: 10px;
+                border: 2px solid #000;
+                box-shadow: none;
+            }
+
+            .qr-text {
+                color: #000;
+                font-size: 7pt;
+            }
+
+            .theme-selector,
+            .back-to-top,
+            .print-btn,
+            .print-info,
+            nav {
+                display: none !important;
+            }
+
+            .section {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+                margin-bottom: 8px;
+                padding: 12px;
+                background: white !important;
+            }
+
+            .section h2 {
+                color: #000 !important;
+                border-bottom: 2px solid #000;
+                font-size: 13pt;
+                margin-bottom: 8px;
+                padding-bottom: 4px;
+            }
+
+            .section h3 {
+                color: #000 !important;
+                font-size: 11pt;
+                margin-top: 8px;
+                margin-bottom: 5px;
+            }
+
+            .section h4 {
+                color: #333 !important;
+                font-size: 10pt;
+                margin-top: 6px;
+                margin-bottom: 4px;
+            }
+
+            .section p {
+                font-size: 9pt;
+                margin-bottom: 5px;
+            }
+
+            .key-point {
+                background: #f5f5f5 !important;
+                border-left: 3px solid #000;
+                padding: 8px;
+                margin: 6px 0;
+                font-size: 9pt;
+            }
+
+            .warning-box {
+                background: #fff9e6 !important;
+                border-left: 3px solid #666;
+                padding: 8px;
+                margin: 6px 0;
+                font-size: 9pt;
+            }
+
+            .tip-box {
+                background: #f0f7f0 !important;
+                border-left: 3px solid #666;
+                padding: 8px;
+                margin: 6px 0;
+                font-size: 9pt;
+            }
+
+            .diagram-container {
+                background: #fafafa !important;
+                border: 2px solid #000;
+                padding: 10px;
+                margin: 8px 0;
+                page-break-inside: avoid;
+            }
+
+            .diagram-title {
+                font-size: 10pt;
+                color: #000 !important;
+            }
+
+            .org-box {
+                background: #e0e0e0 !important;
+                color: #000 !important;
+                box-shadow: none;
+                border: 1px solid #666;
+                font-size: 8pt;
+                padding: 8px 12px;
+            }
+
+            .dept-box {
+                background: #f5f5f5 !important;
+                border: 1px solid #666;
+                font-size: 8pt;
+                padding: 8px;
+            }
+
+            .dept-icon {
+                font-size: 1.2rem;
+            }
+
+            .comm-node {
+                background: #d0d0d0 !important;
+                color: #000 !important;
+                font-size: 8pt;
+                padding: 8px 12px;
+            }
+
+            .comm-arrow {
+                color: #666 !important;
+            }
+
+            .resp-header {
+                background: #d0d0d0 !important;
+                color: #000 !important;
+                font-size: 9pt;
+            }
+
+            .resp-cell {
+                font-size: 8pt;
+                border: 1px solid #ccc;
+            }
+
+            .resp-role {
+                background: #f0f0f0 !important;
+            }
+
+            .checklist {
+                background: #fafafa !important;
+                padding: 8px;
+                margin: 6px 0;
+            }
+
+            .checklist-item {
+                background: white !important;
+                border-left: 2px solid #333;
+                padding: 4px 4px 4px 30px;
+                margin: 3px 0;
+                font-size: 8pt;
+                position: relative;
+            }
+
+            .checklist-item:before {
+                background: #666 !important;
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                margin-right: 8px;
+                font-size: 10pt;
+                position: absolute;
+                left: 5px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .table-container::after {
+                display: none;
+            }
+
+            table {
+                border: 1px solid #000;
+                font-size: 8pt;
+                margin: 6px 0;
+                width: 100%;
+                page-break-inside: avoid;
+            }
+
+            th {
+                background: #e0e0e0 !important;
+                color: #000 !important;
+                border: 1px solid #000;
+                padding: 4px;
+                font-size: 9pt;
+            }
+
+            td {
+                border: 1px solid #666;
+                padding: 4px;
+            }
+
+            tr:nth-child(even) {
+                background: #f9f9f9 !important;
+            }
+
+            ul, ol {
+                margin: 4px 0 4px 15px;
+                font-size: 9pt;
+            }
+
+            ul li, ol li {
+                margin-bottom: 2px;
+            }
+
+            * {
+                margin-top: 0 !important;
+            }
+
+            h2 { margin-top: 8px !important; }
+            h3 { margin-top: 6px !important; }
+            h4 { margin-top: 5px !important; }
+
+            h2, h3 {
+                page-break-after: avoid;
+            }
+
+            .section:first-of-type {
+                page-break-before: avoid;
+            }
+
+            @page {
+                margin: 1.5cm 1cm 1.5cm 1cm;
+                
+                @bottom-right {
+                    content: "Page " counter(page);
+                    font-size: 8pt;
+                }
+                
+                @bottom-left {
+                    content: "Unit 081 | Working Relationships";
+                    font-size: 8pt;
+                }
+                
+                @bottom-center {
+                    content: "Scan QR code for interactive version";
+                    font-size: 8pt;
+                }
+            }
+
+            @page :first {
+                @top-right {
+                    content: "Student Handout";
+                    font-size: 9pt;
+                    font-weight: bold;
+                }
+            }
+
+            strong {
+                font-weight: 700;
+            }
+
+            em {
+                font-style: italic;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="qr-code">
+                <img src="qr.png" alt="QR Code - Scan to access online version">
+                <span class="qr-text">Scan for online</span>
+            </div>
+            <h1>🤝 Working Relationships in Automotive Environment</h1>
+            <p class="subtitle">Knowledge to Support Working Relationships in the Automotive Work Environment</p>
+            <span class="assessment-code">Unit 081 | Level 1</span>
+        </header>
+
+        <!-- Theme Selector -->
+        <div class="theme-selector">
+            <h3>🎨 Choose Your Display Theme</h3>
+            <p>Select a theme that's comfortable for you to read. Your choice will be saved automatically.</p>
+            <div class="theme-buttons">
+                <button class="theme-btn active" data-theme="light">
+                    <span class="theme-btn-icon">☀️</span> Light
+                </button>
+                <button class="theme-btn" data-theme="dark">
+                    <span class="theme-btn-icon">🌙</span> Dark
+                </button>
+                <button class="theme-btn" data-theme="contrast">
+                    <span class="theme-btn-icon">⚫</span> High Contrast
+                </button>
+                <button class="theme-btn" data-theme="dyslexia">
+                    <span class="theme-btn-icon">📖</span> Dyslexia Friendly
+                </button>
+                <button class="theme-btn" data-theme="blue">
+                    <span class="theme-btn-icon">💙</span> Blue Calm
+                </button>
+                <button class="theme-btn" data-theme="green">
+                    <span class="theme-btn-icon">💚</span> Green Nature
+                </button>
+            </div>
+        </div>
+
+        <!-- Print Information -->
+        <div class="print-info">
+            <h4>🖨️ Need a Printed Handout?</h4>
+            <p>Click the print button (bottom right) or press <strong>Ctrl+P</strong> to get a <strong>condensed 10-12 page handout</strong> format.</p>
+            <p>Perfect for revision, note-taking, and quick reference during your assessment!</p>
+        </div>
+
+        <nav>
+            <h2>📚 Quick Navigation</h2>
+            <div class="nav-grid">
+                <a href="#topic1" class="nav-button">Departments & Structure</a>
+                <a href="#topic2" class="nav-button">Job Roles & Responsibilities</a>
+                <a href="#topic3" class="nav-button">Information Sources</a>
+                <a href="#topic4" class="nav-button">Legal Requirements</a>
+                <a href="#topic5" class="nav-button">Communication Methods</a>
+                <a href="#topic6" class="nav-button">Working with Supervisors</a>
+                <a href="#topic7" class="nav-button">Records & Timescales</a>
+                <a href="#topic8" class="nav-button">Building Relationships</a>
+            </div>
+        </nav>
+
+        <!-- Topic 1: Departments and Organisational Structure -->
+        <section id="topic1" class="section">
+            <h2>🏢 Topic 1: Departments and Organisational Structure</h2>
+            
+            <h3>Main Departments in an Automotive Environment</h3>
+            
+            <div class="key-point">
+                <strong>🎯 Key Understanding:</strong> A typical automotive business has several specialist departments that work together to serve customers and maintain vehicles. Each department has specific roles and responsibilities.
+            </div>
+
+            <h4>Typical Departments Layout</h4>
+
+            <div class="diagram-container">
+                <div class="diagram-title">📊 Typical Automotive Business Departments</div>
+                <div class="dept-layout">
+                    <div class="dept-box">
+                        <div class="dept-icon">🚗</div>
+                        <div class="dept-name">Sales</div>
+                        <small>New & Used Vehicles</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">🔧</div>
+                        <div class="dept-name">Workshop</div>
+                        <small>Service & Repairs</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📋</div>
+                        <div class="dept-name">Reception</div>
+                        <small>Customer Service</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">🎨</div>
+                        <div class="dept-name">Body Shop</div>
+                        <small>Accident Repairs</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📦</div>
+                        <div class="dept-name">Parts</div>
+                        <small>Stock & Ordering</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">🧼</div>
+                        <div class="dept-name">Valeting</div>
+                        <small>Cleaning & Presentation</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">💼</div>
+                        <div class="dept-name">Administration</div>
+                        <small>Paperwork & Records</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">💰</div>
+                        <div class="dept-name">Accounts</div>
+                        <small>Finance & Invoicing</small>
+                    </div>
+                </div>
+            </div>
+
+            <h4>Department Functions Explained</h4>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Reception:</strong> First point of contact, books appointments, greets customers, handles enquiries</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Workshop:</strong> Carries out servicing, repairs, diagnostics, MOTs, and vehicle maintenance</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Body Shop:</strong> Repairs accident damage, panel beating, spray painting, welding</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Parts Department:</strong> Orders, stores, and supplies spare parts and components to workshop</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Sales:</strong> Sells new and used vehicles, arranges test drives, processes vehicle sales</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Valeting:</strong> Cleans and presents vehicles for sale or customer collection</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Administration:</strong> Handles paperwork, maintains records, processes documentation</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Accounts:</strong> Manages invoicing, payments, financial records, and supplier payments</span>
+                </div>
+            </div>
+
+            <h3>Organisational Structures</h3>
+
+            <h4>Non-Franchised Dealer (Independent Garage)</h4>
+
+            <div class="diagram-container">
+                <div class="diagram-title">🔷 Non-Franchised Dealer Structure</div>
+                <div class="org-chart">
+                    <div class="org-level">
+                        <div class="org-box level-1">Owner/Manager</div>
+                    </div>
+                    <div class="org-connector"></div>
+                    <div class="org-level">
+                        <div class="org-box level-2">Workshop Supervisor</div>
+                        <div class="org-box level-2">Receptionist</div>
+                        <div class="org-box level-2">Parts Manager</div>
+                    </div>
+                    <div class="org-connector"></div>
+                    <div class="org-level">
+                        <div class="org-box level-3">Skilled Technicians</div>
+                        <div class="org-box level-3">Trainee Technicians</div>
+                        <div class="org-box level-3">Valeter</div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Key Features:</strong> Smaller structure, owner often involved in daily operations, less formal hierarchy, multi-skilled staff</p>
+            </div>
+
+            <h4>Franchised Dealer (Main Dealer)</h4>
+
+            <div class="diagram-container">
+                <div class="diagram-title">🔶 Franchised Dealer Structure</div>
+                <div class="org-chart">
+                    <div class="org-level">
+                        <div class="org-box level-1">General Manager / Dealer Principal</div>
+                    </div>
+                    <div class="org-connector"></div>
+                    <div class="org-level">
+                        <div class="org-box level-2">Service Manager</div>
+                        <div class="org-box level-2">Sales Manager</div>
+                        <div class="org-box level-2">Parts Manager</div>
+                        <div class="org-box level-2">Body Shop Manager</div>
+                    </div>
+                    <div class="org-connector"></div>
+                    <div class="org-level">
+                        <div class="org-box level-3">Workshop Supervisor</div>
+                        <div class="org-box level-3">Reception Team</div>
+                        <div class="org-box level-3">Parts Advisors</div>
+                        <div class="org-box level-3">Body Shop Supervisor</div>
+                    </div>
+                    <div class="org-connector"></div>
+                    <div class="org-level">
+                        <div class="org-box level-3">Senior Technicians</div>
+                        <div class="org-box level-3">Technicians</div>
+                        <div class="org-box level-3">Apprentices</div>
+                        <div class="org-box level-3">Valeters</div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Key Features:</strong> Larger structure, formal departments, specialist roles, brand-specific training, manufacturer standards</p>
+            </div>
+
+            <h4>Key Differences Between Non-Franchised and Franchised</h4>
+
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Non-Franchised (Independent)</th>
+                        <th>Franchised (Main Dealer)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Size</strong></td>
+                        <td>Smaller, 5-20 staff typically</td>
+                        <td>Larger, 30-100+ staff</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Structure</strong></td>
+                        <td>Flat hierarchy, fewer management layers</td>
+                        <td>Hierarchical, multiple management levels</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Specialisation</strong></td>
+                        <td>Multi-skilled staff, work on all makes</td>
+                        <td>Specialist roles, focus on specific brand</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Communication</strong></td>
+                        <td>Direct, informal, face-to-face</td>
+                        <td>Formal, structured, documented</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Decision Making</strong></td>
+                        <td>Quick, owner-led</td>
+                        <td>Formal approval process, multiple levels</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brand Affiliation</strong></td>
+                        <td>Independent, no manufacturer tie</td>
+                        <td>Represents specific manufacturer brand</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Lines of Communication</h3>
+
+            <div class="diagram-container">
+                <div class="diagram-title">💬 Communication Flow in Automotive Environment</div>
+                <div class="comm-flow">
+                    <div class="comm-node">Customer</div>
+                    <div class="comm-arrow">→</div>
+                    <div class="comm-node">Reception</div>
+                    <div class="comm-arrow">→</div>
+                    <div class="comm-node">Technician</div>
+                    <div class="comm-arrow">→</div>
+                    <div class="comm-node">Supervisor</div>
+                    <div class="comm-arrow">→</div>
+                    <div class="comm-node">Manager</div>
+                </div>
+                <div class="comm-flow" style="margin-top: 20px;">
+                    <div class="comm-node">Technician</div>
+                    <div class="comm-arrow">↔</div>
+                    <div class="comm-node">Parts</div>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Note:</strong> Communication flows both up and down the hierarchy, and sideways between departments</p>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Assessment Tip:</strong> When describing organisational structures, mention:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Who reports to whom</li>
+                    <li>The hierarchy (who's in charge of what)</li>
+                    <li>How information flows between departments</li>
+                    <li>The difference in size and complexity</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Topic 2: Job Roles and Responsibilities -->
+        <section id="topic2" class="section">
+            <h2>👥 Topic 2: Job Roles and Responsibility Levels</h2>
+            
+            <h3>Levels of Responsibility</h3>
+            
+            <div class="key-point">
+                <strong>🎯 Key Understanding:</strong> Different job roles have different levels of responsibility, authority, and accountability. Understanding your role and who to report to is essential for smooth workshop operations.
+            </div>
+
+            <h4>Responsibility Matrix</h4>
+
+            <div class="diagram-container">
+                <div class="diagram-title">📊 Responsibility Levels at a Glance</div>
+                <div class="resp-matrix">
+                    <div class="resp-header">Role</div>
+                    <div class="resp-header">Main Responsibilities</div>
+                    <div class="resp-header">Who They Report To</div>
+                    
+                    <div class="resp-cell resp-role">Trainee / Apprentice</div>
+                    <div class="resp-cell">Learning skills, assisting technicians, basic maintenance tasks</div>
+                    <div class="resp-cell">Skilled Technician / Supervisor</div>
+                    
+                    <div class="resp-cell resp-role">Skilled Technician</div>
+                    <div class="resp-cell">Diagnosing faults, carrying out repairs, mentoring trainees</div>
+                    <div class="resp-cell">Supervisor / Workshop Controller</div>
+                    
+                    <div class="resp-cell resp-role">Supervisor</div>
+                    <div class="resp-cell">Managing technicians, allocating work, quality control</div>
+                    <div class="resp-cell">Service Manager</div>
+                    
+                    <div class="resp-cell resp-role">Manager</div>
+                    <div class="resp-cell">Overall department performance, staff management, budgets</div>
+                    <div class="resp-cell">General Manager / Owner</div>
+                </div>
+            </div>
+
+            <h3>Detailed Role Descriptions</h3>
+
+            <h4>Trainee / Apprentice Technician</h4>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Typical Responsibilities:</h4>
+                <div class="checklist-item">
+                    <span>Learning fundamental skills through college and on-the-job training</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Assisting skilled technicians with vehicle repairs and servicing</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Carrying out basic maintenance tasks (oil changes, tyre fitting, fluid checks)</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Keeping the workshop clean, tidy, and organised</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Collecting and returning vehicles from parking areas</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Observing and following workshop procedures and safety rules</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Asking questions when unsure and seeking guidance from qualified staff</span>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>🔑 Key Attributes:</strong> Trainees work under supervision at all times. They have limited authority to make decisions and must always refer complex issues to qualified technicians or supervisors. They are NOT allowed to sign off work as complete or certify vehicle roadworthiness.
+            </div>
+
+            <h4>Skilled Technician</h4>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Typical Responsibilities:</h4>
+                <div class="checklist-item">
+                    <span>Diagnosing vehicle faults using diagnostic equipment and technical knowledge</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Carrying out repairs, servicing, and maintenance to manufacturer standards</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Working independently with minimal supervision on routine tasks</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Completing accurate job cards and recording work carried out</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Advising reception and customers on work required</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Mentoring and guiding trainee technicians</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Maintaining tools and equipment in good working order</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Working to time estimates and productivity targets</span>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>🔑 Key Attributes:</strong> Skilled technicians have technical qualifications (Level 2/3 NVQ, City & Guilds, IMI certificates). They can work independently on most jobs but refer complex issues or customer complaints to supervisors. They have authority to order parts and book vehicles in for additional work.
+            </div>
+
+            <h4>Supervisor / Workshop Controller</h4>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Typical Responsibilities:</h4>
+                <div class="checklist-item">
+                    <span>Allocating work to technicians based on skills and workload</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Monitoring progress of jobs and ensuring deadlines are met</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Carrying out quality checks on completed work before customer collection</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Dealing with technical problems and providing guidance to technicians</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Handling customer complaints and warranty issues</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Managing workshop health and safety compliance</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Conducting appraisals and training for technicians</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Ordering tools, equipment, and consumables</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Reporting to service manager on workshop performance</span>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>🔑 Key Attributes:</strong> Supervisors have extensive technical knowledge and management experience. They have authority to authorise additional work, resolve customer issues, and manage staff performance. They are responsible for the quality and productivity of the entire workshop.
+            </div>
+
+            <h4>Service Manager / Aftersales Manager</h4>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Typical Responsibilities:</h4>
+                <div class="checklist-item">
+                    <span>Overall responsibility for workshop, parts, and reception departments</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Setting and monitoring departmental budgets and financial targets</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Managing staff recruitment, training, and development</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Ensuring compliance with manufacturer standards and requirements</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Handling escalated customer complaints and warranty claims</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Developing business strategy and growth plans</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Liaising with manufacturers, suppliers, and regulatory bodies</span>
+                </div>
+                <div class="checklist-item">
+                    <span>Reporting to general manager or dealer principal on performance</span>
+                </div>
+            </div>
+
+            <div class="key-point">
+                <strong>🔑 Key Attributes:</strong> Managers have both technical expertise and business acumen. They have authority over budgets, staffing decisions, and strategic direction. They are accountable for the profitability and reputation of the service department.
+            </div>
+
+            <h3>Decision-Making Authority</h3>
+
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Decision Type</th>
+                        <th>Trainee</th>
+                        <th>Technician</th>
+                        <th>Supervisor</th>
+                        <th>Manager</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Basic maintenance tasks</strong></td>
+                        <td>✓ With supervision</td>
+                        <td>✓ Independent</td>
+                        <td>✓ Independent</td>
+                        <td>✓ Independent</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Order standard parts</strong></td>
+                        <td>✗ No authority</td>
+                        <td>✓ Yes</td>
+                        <td>✓ Yes</td>
+                        <td>✓ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Authorise additional work</strong></td>
+                        <td>✗ No authority</td>
+                        <td>✗ Must refer</td>
+                        <td>✓ Yes</td>
+                        <td>✓ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Handle customer complaints</strong></td>
+                        <td>✗ Refer to supervisor</td>
+                        <td>Simple issues only</td>
+                        <td>✓ Yes</td>
+                        <td>✓ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sign off MOT / warranty</strong></td>
+                        <td>✗ Not qualified</td>
+                        <td>✓ If qualified</td>
+                        <td>✓ Yes</td>
+                        <td>✓ Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recruit staff</strong></td>
+                        <td>✗ No authority</td>
+                        <td>✗ No authority</td>
+                        <td>Recommend only</td>
+                        <td>✓ Yes</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Assessment Tip:</strong> When describing responsibility levels, include:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>What the role is allowed to do independently</li>
+                    <li>What requires supervision or approval</li>
+                    <li>Who they report to</li>
+                    <li>Examples of typical daily tasks</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Topic 3: Information Sources -->
+        <section id="topic3" class="section">
+            <h2>📚 Topic 3: Information Sources and Their Uses</h2>
+            
+            <h3>Different Sources of Information</h3>
+            
+            <div class="key-point">
+                <strong>🎯 Key Understanding:</strong> Technicians need access to accurate, up-to-date information from various sources to carry out repairs correctly and efficiently. Using the right information source saves time and prevents mistakes.
+            </div>
+
+            <h4>Main Information Sources</h4>
+
+            <div class="diagram-container">
+                <div class="diagram-title">📖 Information Sources in the Automotive Workshop</div>
+                <div class="dept-layout">
+                    <div class="dept-box">
+                        <div class="dept-icon">👥</div>
+                        <div class="dept-name">Other Staff</div>
+                        <small>Experienced Colleagues</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📖</div>
+                        <div class="dept-name">Service Manuals</div>
+                        <small>Repair Procedures</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📋</div>
+                        <div class="dept-name">Parts Lists</div>
+                        <small>Component Catalogues</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">💻</div>
+                        <div class="dept-name">Computer Software</div>
+                        <small>Digital Systems</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">🌐</div>
+                        <div class="dept-name">Internet</div>
+                        <small>Technical Forums</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">🏭</div>
+                        <div class="dept-name">Manufacturer</div>
+                        <small>Technical Bulletins</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">🔌</div>
+                        <div class="dept-name">Diagnostic Equipment</div>
+                        <small>Live Data & Fault Codes</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📱</div>
+                        <div class="dept-name">Mobile Apps</div>
+                        <small>Quick Reference</small>
+                    </div>
+                </div>
+            </div>
+
+            <h3>When to Use Each Information Source</h3>
+
+            <h4>1. Other Staff Members (Experienced Colleagues)</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Quick advice on a problem you haven't encountered before</li>
+                    <li>Practical tips on difficult jobs</li>
+                    <li>Workshop-specific procedures and shortcuts</li>
+                    <li>When you need immediate guidance during a repair</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Example:</strong> "I need to remove the gearbox on a Ford Transit - what's the best way to support the engine?"</p>
+            </div>
+
+            <h4>2. Service Manuals (Haynes, Workshop Manuals)</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Step-by-step repair procedures</li>
+                    <li>Torque settings for bolts and fixings</li>
+                    <li>Component removal and refitting instructions</li>
+                    <li>Timing belt change procedures</li>
+                    <li>Wiring diagrams and electrical specifications</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Example:</strong> Finding the correct torque setting for cylinder head bolts</p>
+            </div>
+
+            <h4>3. Parts Lists and Catalogues</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Identifying the correct part number for a component</li>
+                    <li>Finding superseded (updated) part numbers</li>
+                    <li>Checking parts availability and pricing</li>
+                    <li>Verifying which parts are needed for a service kit</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Example:</strong> Looking up the part number for a replacement brake caliper for a specific vehicle</p>
+            </div>
+
+            <h4>4. Computer Software (Autodata, Mitchell, TIS)</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Finding service schedules and intervals</li>
+                    <li>Checking fluid capacities and specifications</li>
+                    <li>Accessing wiring diagrams and component locations</li>
+                    <li>Looking up technical data and specifications</li>
+                    <li>Viewing technical service bulletins (TSBs)</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Example:</strong> Checking the engine oil capacity and correct grade for a vehicle</p>
+            </div>
+
+            <h4>5. Internet Resources</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Researching common faults and known issues</li>
+                    <li>Watching video tutorials for complex procedures</li>
+                    <li>Accessing manufacturer technical websites</li>
+                    <li>Finding specialist tool requirements</li>
+                    <li>Checking technical forums for solutions</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Example:</strong> Searching for "BMW N47 engine timing chain failure symptoms"</p>
+            </div>
+
+            <h4>6. Manufacturer Technical Information</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Warranty repair procedures</li>
+                    <li>Technical service bulletins (TSBs)</li>
+                    <li>Software updates and reprogramming</li>
+                    <li>Recall information</li>
+                    <li>Brand-specific repair procedures</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Example:</strong> Checking for a manufacturer recall on airbag inflators</p>
+            </div>
+
+            <h4>7. Diagnostic Equipment</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Reading fault codes (DTCs) from vehicle systems</li>
+                    <li>Viewing live data from sensors</li>
+                    <li>Performing system tests (injector balance, compression)</li>
+                    <li>Resetting service lights and adaptations</li>
+                    <li>Programming new components</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Example:</strong> Using a scan tool to read engine fault codes when the check engine light is illuminated</p>
+            </div>
+
+            <h3>Importance of Using Correct Information</h3>
+
+            <div class="warning-box">
+                <strong>⚠️ Why Correct Information Matters:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Safety:</strong> Incorrect torque settings or procedures can cause component failure and accidents</li>
+                    <li><strong>Quality:</strong> Using wrong specifications leads to comebacks and warranty claims</li>
+                    <li><strong>Efficiency:</strong> Having the right information first time saves time and reduces costs</li>
+                    <li><strong>Reputation:</strong> Correct repairs build customer trust and business reputation</li>
+                    <li><strong>Legal:</strong> Incorrect repairs may breach legal requirements and void insurance</li>
+                    <li><strong>Profitability:</strong> Mistakes cost money in parts, labour, and lost customer goodwill</li>
+                </ul>
+            </div>
+
+            <h3>Working to Recognised Procedures</h3>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Why Follow Procedures?</h4>
+                <div class="checklist-item">
+                    <span><strong>Consistency:</strong> Everyone does the job the same way, ensuring consistent quality</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Safety:</strong> Procedures include safety steps to protect you and others</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Efficiency:</strong> Proven procedures are usually the fastest and most effective method</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Warranty:</strong> Manufacturers require adherence to procedures for warranty coverage</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Legal:</strong> Some procedures are required by law (e.g., MOT testing)</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Training:</strong> Following procedures helps you learn the correct method</span>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Assessment Tip:</strong> When giving examples of information sources:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Name three DIFFERENT types of sources</li>
+                    <li>Explain WHEN you would use each one</li>
+                    <li>Give a SPECIFIC example for each</li>
+                    <li>Mention why using correct information is important</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Topic 4: Legal Requirements -->
+        <section id="topic4" class="section">
+            <h2>⚖️ Topic 4: Legal Requirements for Road Vehicles</h2>
+            
+            <h3>Legal Requirements and Safety</h3>
+            
+            <div class="key-point">
+                <strong>🎯 Key Understanding:</strong> All vehicles used on UK roads must meet specific legal requirements. As a technician, you need to understand these requirements and ensure vehicles are safe and legal after any work is carried out.
+            </div>
+
+            <h3>Main Legal Requirements</h3>
+
+            <h4>1. MOT Test Certificate</h4>
+            <div class="key-point">
+                <strong>Legal Requirement:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Cars and light vans must have an MOT once they're 3 years old</li>
+                    <li>MOT is required annually after that</li>
+                    <li>Tests roadworthiness, safety, and emissions</li>
+                    <li>It's illegal to drive without a valid MOT (except driving to a pre-booked test)</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why It Matters:</strong> Ensures vehicles meet minimum safety standards. Failing to maintain MOT is an offence carrying fines and points.</p>
+            </div>
+
+            <h4>2. Vehicle Insurance</h4>
+            <div class="key-point">
+                <strong>Legal Requirement:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>All vehicles must have at least third-party insurance</li>
+                    <li>Must be in place before vehicle is driven on any public road</li>
+                    <li>Covers damage to other vehicles, property, and injury to others</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why It Matters:</strong> Protects other road users. Driving without insurance carries heavy penalties including fines, points, and vehicle seizure.</p>
+            </div>
+
+            <h4>3. Vehicle Excise Duty (Road Tax / VED)</h4>
+            <div class="key-point">
+                <strong>Legal Requirement:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Annual tax must be paid on all vehicles (unless exempt)</li>
+                    <li>Rate based on vehicle emissions and type</li>
+                    <li>Can be paid monthly, 6-monthly, or annually</li>
+                    <li>Checked electronically by ANPR cameras</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why It Matters:</strong> Funds road maintenance. Driving untaxed vehicles results in fines and DVLA prosecution.</p>
+            </div>
+
+            <h4>4. Valid Driving Licence</h4>
+            <div class="key-point">
+                <strong>Legal Requirement:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Driver must hold a valid UK or EU driving licence</li>
+                    <li>Correct category for vehicle type (car, van, lorry)</li>
+                    <li>Provisional licence holders must display L-plates and be supervised</li>
+                    <li>Licence must be renewed when expired or details change</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why It Matters:</strong> Proves driver competence. Driving without correct licence is illegal and invalidates insurance.</p>
+            </div>
+
+            <h4>5. Vehicle Registration</h4>
+            <div class="key-point">
+                <strong>Legal Requirement:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Every vehicle must be registered with the DVLA</li>
+                    <li>Must display correct registration plates</li>
+                    <li>Plates must meet legal specifications (size, font, spacing)</li>
+                    <li>V5C logbook must be updated when ownership changes</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why It Matters:</strong> Identifies vehicles for enforcement and taxation. Illegal plates or unregistered vehicles lead to fines and seizure.</p>
+            </div>
+
+            <h3>Specific Safety Requirements</h3>
+
+            <h4>Tyres (Legal Requirements)</h4>
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Legal Tyre Standards:</h4>
+                <div class="checklist-item">
+                    <span><strong>Minimum tread depth:</strong> 1.6mm across central ¾ of tread, around entire circumference</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>No damage:</strong> Tyres must be free from cuts, bulges, and exposed cords</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Correct inflation:</strong> Must be inflated to manufacturer's recommended pressure</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Correct fitment:</strong> All tyres on an axle must be the same size and type</span>
+                </div>
+            </div>
+
+            <h4>Lights and Indicators</h4>
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Legal Lighting Requirements:</h4>
+                <div class="checklist-item">
+                    <span><strong>Headlights:</strong> Dipped and main beam must work, correctly aimed</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Indicators:</strong> All four indicators must flash amber at correct rate</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Brake lights:</strong> Must illuminate when brake pedal pressed</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Rear lights:</strong> Red tail lights must work</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Rear fog lights:</strong> Must work (fitted on vehicles after 1980)</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Number plate lights:</strong> Must illuminate the rear registration plate</span>
+                </div>
+            </div>
+
+            <h4>Brakes</h4>
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Legal Braking Standards:</h4>
+                <div class="checklist-item">
+                    <span><strong>Service brake:</strong> Main brake system must be effective on all wheels</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Parking brake:</strong> Handbrake must hold vehicle on a 1-in-6.25 gradient</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>No defects:</strong> Brake components must be secure, not corroded, fluid leak-free</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Brake efficiency:</strong> Must meet minimum braking performance standards</span>
+                </div>
+            </div>
+
+            <h4>Windscreen and Wipers</h4>
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Legal Requirements:</h4>
+                <div class="checklist-item">
+                    <span><strong>Clear view:</strong> Windscreen must provide adequate view of the road</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>No damage:</strong> Cracks or chips in driver's vision zone larger than 10mm are illegal</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Wipers:</strong> Must clear windscreen effectively</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Washers:</strong> Washer system must function and have adequate fluid</span>
+                </div>
+            </div>
+
+            <h4>Emissions</h4>
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Legal Emissions Standards:</h4>
+                <div class="checklist-item">
+                    <span><strong>Excessive smoke:</strong> Must not emit excessive black, blue, or white smoke</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Exhaust system:</strong> Must not leak, be secure, and relatively quiet</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Catalytic converter:</strong> Must be fitted if required by manufacturer</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Emissions test:</strong> Must pass MOT emissions standards for vehicle age</span>
+                </div>
+            </div>
+
+            <h4>Seatbelts</h4>
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Legal Seatbelt Requirements:</h4>
+                <div class="checklist-item">
+                    <span><strong>Fitment:</strong> Must be fitted in all front seats and rear seats (if fitted after 1987)</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Condition:</strong> Must be in good condition, not frayed or damaged</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Function:</strong> Must lock properly and retract fully</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Wear requirement:</strong> Drivers and passengers must wear seatbelts when fitted</span>
+                </div>
+            </div>
+
+            <h3>Identification Codes and Component Specifications</h3>
+
+            <div class="key-point">
+                <strong>Why Identification Codes Matter:</strong>
+                <p style="margin-top: 10px;">When replacing parts, it's critical to use components that meet the original equipment (OE) specification. Identification codes help ensure the correct parts are fitted.</p>
+            </div>
+
+            <h4>Important Identification Codes</h4>
+
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Code Type</th>
+                        <th>What It Identifies</th>
+                        <th>Why It's Important</th>
+                    </tr>
+                    <tr>
+                        <td><strong>VIN (Vehicle Identification Number)</strong></td>
+                        <td>Unique 17-character code identifying specific vehicle</td>
+                        <td>Ensures correct parts for exact model/specification</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Engine Code</strong></td>
+                        <td>Identifies engine type and specification</td>
+                        <td>Critical for ordering correct engine parts</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Paint Code</strong></td>
+                        <td>Identifies exact paint colour</td>
+                        <td>Ensures colour match for body repairs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Part Numbers</strong></td>
+                        <td>Manufacturer's unique code for each component</td>
+                        <td>Guarantees exact replacement part</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tyre Speed Rating</strong></td>
+                        <td>Maximum safe speed for tyre (e.g., H=130mph)</td>
+                        <td>Legal requirement - must meet or exceed OE rating</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DOT Code (Tyres)</strong></td>
+                        <td>Week and year of tyre manufacture</td>
+                        <td>Identifies age - tyres over 10 years old should be replaced</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brake Fluid Rating</strong></td>
+                        <td>Specification (DOT 3, 4, 5.1)</td>
+                        <td>Using wrong fluid can cause brake failure</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h4>Examples When OE Specification Must Be Met</h4>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Tyres:</strong> Speed and load ratings must meet or exceed original specification</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Brake Components:</strong> Pads, discs, and calipers must meet original standards for safety</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Airbags:</strong> Must be exact OE part - no aftermarket alternatives allowed</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Timing Belts:</strong> Must meet manufacturer specification to prevent engine damage</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Suspension Components:</strong> Springs and dampers must match original specification</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Engine Mounts:</strong> Must provide correct engine isolation and support</span>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Consequences of Using Incorrect Parts:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Safety Risk:</strong> Could cause accident or injury (e.g., wrong brake pads, incorrect tyre rating)</li>
+                    <li><strong>MOT Failure:</strong> Vehicle may fail test with non-compliant parts</li>
+                    <li><strong>Warranty Void:</strong> Manufacturer warranty becomes invalid</li>
+                    <li><strong>Insurance Issue:</strong> Insurer may refuse to pay out after accident</li>
+                    <li><strong>Legal Liability:</strong> Workshop could be prosecuted if incorrect parts cause accident</li>
+                    <li><strong>Comeback:</strong> Part failure leads to customer complaints and repeat work</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Assessment Tip:</strong> When answering questions on legal requirements:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Give TWO specific examples (e.g., MOT and insurance)</li>
+                    <li>Explain WHY each is a legal requirement</li>
+                    <li>Mention the CONSEQUENCE of not meeting the requirement</li>
+                    <li>Include SAFETY aspects where relevant</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Topic 5: Communication Methods -->
+        <section id="topic5" class="section">
+            <h2>💬 Topic 5: Communication Methods in the Workplace</h2>
+            
+            <h3>Different Methods of Communication</h3>
+            
+            <div class="key-point">
+                <strong>🎯 Key Understanding:</strong> Effective communication is essential in an automotive environment. Different situations require different communication methods. Choosing the right method ensures clear, accurate information sharing.
+            </div>
+
+            <h4>Communication Methods Overview</h4>
+
+            <div class="diagram-container">
+                <div class="diagram-title">📡 Communication Methods in Automotive Workshops</div>
+                <div class="dept-layout">
+                    <div class="dept-box">
+                        <div class="dept-icon">🗣️</div>
+                        <div class="dept-name">Verbal</div>
+                        <small>Face-to-face / Phone</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">🚧</div>
+                        <div class="dept-name">Signs & Notices</div>
+                        <small>Safety Warnings</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📝</div>
+                        <div class="dept-name">Memos</div>
+                        <small>Internal Notes</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📞</div>
+                        <div class="dept-name">Telephone</div>
+                        <small>Direct Calls</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📧</div>
+                        <div class="dept-name">Email</div>
+                        <small>Electronic Messages</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📋</div>
+                        <div class="dept-name">Job Cards</div>
+                        <small>Work Records</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">📌</div>
+                        <div class="dept-name">Notice Boards</div>
+                        <small>Team Updates</small>
+                    </div>
+                    <div class="dept-box">
+                        <div class="dept-icon">💬</div>
+                        <div class="dept-name">SMS/Text</div>
+                        <small>Quick Messages</small>
+                    </div>
+                </div>
+            </div>
+
+            <h3>When to Use Each Communication Method</h3>
+
+            <h4>1. Verbal Communication (Face-to-Face)</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Complex technical explanations</strong> - Demonstrating a fault to a colleague</li>
+                    <li><strong>Customer service</strong> - Explaining work needed or completed</li>
+                    <li><strong>Urgent issues</strong> - Reporting a safety problem immediately</li>
+                    <li><strong>Team briefings</strong> - Morning meetings or toolbox talks</li>
+                    <li><strong>Sensitive matters</strong> - Discussing complaints or performance issues</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Advantages:</strong> Immediate feedback, can ask questions, tone and body language aid understanding</p>
+                <p><strong>Disadvantages:</strong> No written record, information can be forgotten or misunderstood</p>
+            </div>
+
+            <h4>2. Signs and Notices</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Safety warnings</strong> - "Wear eye protection", "High voltage"</li>
+                    <li><strong>Equipment operation</strong> - Instructions on ramp controls</li>
+                    <li><strong>Fire safety</strong> - Fire exit signs, assembly points</li>
+                    <li><strong>Storage areas</strong> - "Hazardous substances", "First aid"</li>
+                    <li><strong>Restrictions</strong> - "No smoking", "Authorised personnel only"</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Advantages:</strong> Always visible, permanent reminder, universal symbols understood by all</p>
+                <p><strong>Disadvantages:</strong> Can be ignored if too many, become "wallpaper"</p>
+            </div>
+
+            <h4>3. Memos (Memorandums)</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Policy updates</strong> - Changes to workshop procedures</li>
+                    <li><strong>Announcements</strong> - Staff changes, new equipment</li>
+                    <li><strong>Internal reminders</strong> - Deadline reminders, event notifications</li>
+                    <li><strong>Brief instructions</strong> - Short procedural changes</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Advantages:</strong> Written record, formal but concise, can be distributed to specific people</p>
+                <p><strong>Disadvantages:</strong> Can be lost or ignored, less personal than face-to-face</p>
+            </div>
+
+            <h4>4. Telephone</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Customer updates</strong> - Informing customers of progress or delays</li>
+                    <li><strong>Parts ordering</strong> - Checking availability with suppliers</li>
+                    <li><strong>Urgent queries</strong> - Technical support from manufacturers</li>
+                    <li><strong>Appointment booking</strong> - Confirming service appointments</li>
+                    <li><strong>Remote communication</strong> - When face-to-face isn't possible</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Advantages:</strong> Quick, personal, can discuss complex issues</p>
+                <p><strong>Disadvantages:</strong> No visual aids, no written record, customer may not answer</p>
+            </div>
+
+            <h4>5. Electronic Mail (Email)</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Formal communication</strong> - Written quotes, service reminders</li>
+                    <li><strong>Documentation</strong> - Sending invoices, warranty claims</li>
+                    <li><strong>Attachments</strong> - Sharing photos of damage or technical bulletins</li>
+                    <li><strong>Non-urgent matters</strong> - Customer service enquiries</li>
+                    <li><strong>Record keeping</strong> - Creating a paper trail of conversations</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Advantages:</strong> Written record, can attach files, can send to multiple recipients</p>
+                <p><strong>Disadvantages:</strong> Can be delayed, impersonal, may go to spam</p>
+            </div>
+
+            <h4>6. Vehicle Job Cards</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Recording work</strong> - Documenting all work carried out</li>
+                    <li><strong>Communication between staff</strong> - Reception to technician to parts</li>
+                    <li><strong>Customer complaints</strong> - Recording fault symptoms</li>
+                    <li><strong>Additional work</strong> - Noting faults found during service</li>
+                    <li><strong>Parts used</strong> - Listing components fitted</li>
+                    <li><strong>Time tracking</strong> - Recording labour hours</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Advantages:</strong> Comprehensive record, legal document, tracks entire job</p>
+                <p><strong>Disadvantages:</strong> Can be misplaced, handwriting may be illegible</p>
+            </div>
+
+            <h4>7. Notice Boards</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Team information</strong> - Rotas, holiday dates, training schedules</li>
+                    <li><strong>Company news</strong> - Achievements, new products, events</li>
+                    <li><strong>Health & safety</strong> - Accident statistics, safety campaigns</li>
+                    <li><strong>Social events</strong> - Staff social activities, charity fundraisers</li>
+                    <li><strong>Technical bulletins</strong> - Manufacturer updates</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Advantages:</strong> Accessible to everyone, informal, good for team building</p>
+                <p><strong>Disadvantages:</strong> Can become cluttered, outdated notices not removed</p>
+            </div>
+
+            <h4>8. SMS Text Messaging</h4>
+            <div class="key-point">
+                <strong>When to Use:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Appointment reminders</strong> - Automated service reminders</li>
+                    <li><strong>Vehicle ready notifications</strong> - "Your car is ready for collection"</li>
+                    <li><strong>Urgent customer contact</strong> - When phone call not answered</li>
+                    <li><strong>Quick updates</strong> - Brief status updates during repair</li>
+                    <li><strong>Confirmation messages</strong> - Booking confirmations</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Advantages:</strong> Instant, high open rate, convenient for customers</p>
+                <p><strong>Disadvantages:</strong> Limited characters, impersonal, assumes customer has mobile</p>
+            </div>
+
+            <h3>Choosing the Right Communication Method</h3>
+
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Situation</th>
+                        <th>Best Communication Method</th>
+                        <th>Why?</th>
+                    </tr>
+                    <tr>
+                        <td>Customer's car needs additional work costing £500</td>
+                        <td>Telephone call</td>
+                        <td>Needs discussion and customer approval</td>
+                    </tr>
+                    <tr>
+                        <td>Recording work carried out on vehicle</td>
+                        <td>Job card</td>
+                        <td>Creates legal record of all work done</td>
+                    </tr>
+                    <tr>
+                        <td>New workshop opening hours</td>
+                        <td>Notice board + Email</td>
+                        <td>Reaches all staff, provides written record</td>
+                    </tr>
+                    <tr>
+                        <td>Urgent safety issue found (e.g., brake failure)</td>
+                        <td>Verbal + immediate call to supervisor</td>
+                        <td>Requires immediate attention and action</td>
+                    </tr>
+                    <tr>
+                        <td>Service reminder to 500 customers</td>
+                        <td>SMS/Email (automated)</td>
+                        <td>Efficient, cost-effective for bulk messages</td>
+                    </tr>
+                    <tr>
+                        <td>Explaining complex fault to customer</td>
+                        <td>Verbal (face-to-face)</td>
+                        <td>Can show them, answer questions, build trust</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Assessment Tip:</strong> When explaining communication methods:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Name the SPECIFIC method (e.g., "telephone" not just "talking")</li>
+                    <li>Give a REAL EXAMPLE of when you'd use it</li>
+                    <li>Explain WHY that method is best for that situation</li>
+                    <li>Consider: urgency, need for record, complexity of message</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Topic 6: Working with Supervisors -->
+        <section id="topic6" class="section">
+            <h2>👔 Topic 6: Communicating with Supervisors</h2>
+            
+            <h3>When to Communicate with Your Supervisor</h3>
+            
+            <div class="key-point">
+                <strong>🎯 Key Understanding:</strong> Supervisors need to be kept informed of progress, problems, and any issues that could affect the business, customers, or safety. Knowing when to escalate matters to your supervisor is a key workplace skill.
+            </div>
+
+            <h3>Situations Requiring Supervisor Communication</h3>
+
+            <div class="diagram-container">
+                <div class="diagram-title">🔔 When to Contact Your Supervisor</div>
+                <div class="comm-flow" style="flex-direction: column; align-items: stretch;">
+                    <div class="comm-node" style="background: #dc3545; width: 100%; margin: 5px 0;">
+                        🚨 URGENT: Safety Issues, Customer Emergencies
+                    </div>
+                    <div class="comm-node" style="background: #fd7e14; width: 100%; margin: 5px 0;">
+                        ⚠️ IMPORTANT: Problems, Delays, Additional Work
+                    </div>
+                    <div class="comm-node" style="background: #ffc107; width: 100%; margin: 5px 0;">
+                        📊 ROUTINE: Progress Updates, Queries
+                    </div>
+                </div>
+            </div>
+
+            <h4>1. Referral of Problems</h4>
+            <div class="key-point">
+                <strong>Examples of Problems to Refer:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Technical problems:</strong> "I've found a fault I don't know how to diagnose or repair"</li>
+                    <li><strong>Parts issues:</strong> "The part I ordered is incorrect or doesn't fit"</li>
+                    <li><strong>Equipment failure:</strong> "The diagnostic machine has stopped working"</li>
+                    <li><strong>Customer complaints:</strong> "The customer is unhappy with the work and wants to speak to management"</li>
+                    <li><strong>Quality concerns:</strong> "I think the parts supplied are faulty or substandard"</li>
+                    <li><strong>Cannot meet specification:</strong> "The repair requires specialist tools we don't have"</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why Report These:</strong> Supervisors have more experience and authority to resolve issues, source alternative solutions, or escalate to manufacturers. Trying to solve complex problems alone can waste time and cause mistakes.</p>
+            </div>
+
+            <h4>2. Reporting Delays</h4>
+            <div class="key-point">
+                <strong>Examples of Delays to Report:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Job taking longer than estimated:</strong> "This timing belt job is more complex than expected"</li>
+                    <li><strong>Parts delays:</strong> "The parts haven't arrived and the car was promised for 4pm"</li>
+                    <li><strong>Additional faults found:</strong> "I've found brake discs are also worn and need replacing"</li>
+                    <li><strong>Waiting for information:</strong> "I need a wiring diagram before I can continue"</li>
+                    <li><strong>Equipment unavailable:</strong> "The ramp is being used so I can't start the job"</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why Report These:</strong> Supervisors can re-schedule work, inform customers of delays, allocate resources, or adjust staff deployment. Early warning prevents missed promises and unhappy customers.</p>
+            </div>
+
+            <h4>3. Additional Work Identified</h4>
+            <div class="key-point">
+                <strong>Examples of Additional Work to Report:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Safety-critical faults:</strong> "The brake pipes are corroded and dangerous"</li>
+                    <li><strong>Worn components:</strong> "The suspension bushes are perished and should be replaced"</li>
+                    <li><strong>MOT failure items:</strong> "This car will fail its MOT on these tyres"</li>
+                    <li><strong>Related repairs needed:</strong> "While replacing the clutch, I found the flywheel is damaged"</li>
+                    <li><strong>Advisory items:</strong> "The battery is weak and may fail soon"</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why Report These:</strong> Additional work requires customer authorisation and may affect the price and completion time. Supervisors handle customer communication about extra costs and obtain approval before proceeding.</p>
+            </div>
+
+            <h4>4. Keeping Others Informed of Progress</h4>
+            <div class="key-point">
+                <strong>Examples of Progress Updates:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Milestone updates:</strong> "Engine is out, starting work on gearbox replacement"</li>
+                    <li><strong>Completion status:</strong> "Service is complete, just doing final checks"</li>
+                    <li><strong>Change in timeframe:</strong> "I can finish this an hour earlier than planned"</li>
+                    <li><strong>Awaiting customer decision:</strong> "Job paused pending customer approval for extra work"</li>
+                    <li><strong>Quality issues:</strong> "Found poor previous repair work that affects what we're doing"</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Why Report These:</strong> Keeps the team coordinated, allows accurate customer updates, helps with workshop planning, and builds trust between you and your supervisor.</p>
+            </div>
+
+            <h3>How to Communicate with Supervisors Effectively</h3>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Best Practices:</h4>
+                <div class="checklist-item">
+                    <span><strong>Be Clear and Concise:</strong> State the problem or update clearly without unnecessary detail</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Provide Context:</strong> Explain what you were doing when the issue arose</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Suggest Solutions:</strong> If appropriate, offer your thoughts on how to solve the problem</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Be Timely:</strong> Report issues as soon as they arise, not at the end of the day</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Be Honest:</strong> Don't hide mistakes or try to cover up problems</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Use Appropriate Method:</strong> Urgent = verbal/phone, routine = job card notes</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Follow Up:</strong> Confirm you understood the supervisor's instructions</span>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Common Mistakes to Avoid:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Hiding problems:</strong> Hoping issues will resolve themselves - they rarely do!</li>
+                    <li><strong>Waiting too long:</strong> Reporting delays at the last minute when it's too late to fix</li>
+                    <li><strong>Making assumptions:</strong> Proceeding with additional work without authorisation</li>
+                    <li><strong>Being vague:</strong> "There's a problem with the car" - be specific!</li>
+                    <li><strong>Bypassing supervisor:</strong> Going directly to the manager (follow chain of command)</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Assessment Tip:</strong> When giving examples of supervisor communication:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Give TWO different situations (e.g., technical problem AND delay)</li>
+                    <li>Explain WHAT you would say to the supervisor</li>
+                    <li>Explain WHY it's important to inform them</li>
+                    <li>Consider the CONSEQUENCES of not reporting</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Topic 7: Records and Timescales -->
+        <section id="topic7" class="section">
+            <h2>📋 Topic 7: Record Keeping and Working to Timescales</h2>
+            
+            <h3>Importance of Keeping Accurate Records</h3>
+            
+            <div class="key-point">
+                <strong>🎯 Key Understanding:</strong> Accurate record keeping and working to agreed timescales are fundamental to professional workshop operation. Records provide legal protection, track vehicle history, and ensure quality standards are maintained.
+            </div>
+
+            <h3>Why Vehicle Repair Records Are Important</h3>
+
+            <h4>Legal and Compliance Reasons</h4>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Legal Evidence:</strong> Records prove work was carried out correctly if there's a dispute or court case</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>MOT Records:</strong> Legal requirement to keep MOT test records for specified period</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Warranty Claims:</strong> Manufacturer requires detailed records to process warranty work</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Insurance Claims:</strong> Insurers require proof of repairs and costs</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Consumer Rights:</strong> Customers entitled to written record of work carried out</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Trading Standards:</strong> May investigate complaints - need evidence of proper practice</span>
+                </div>
+            </div>
+
+            <h4>Business and Financial Reasons</h4>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Invoicing:</strong> Records needed to create accurate customer invoices</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Stock Control:</strong> Tracking parts used maintains accurate inventory</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Labour Time:</strong> Records show how long jobs took for productivity analysis</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Profitability:</strong> Analysing job costs versus estimates improves pricing</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Tax and Accounts:</strong> Business accounts require detailed financial records</span>
+                </div>
+            </div>
+
+            <h4>Customer Service Reasons</h4>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Service History:</strong> Complete records increase vehicle resale value</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Future Reference:</strong> Technicians can see what work has been done previously</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Repeat Problems:</strong> Records help diagnose recurring faults</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Customer Queries:</strong> Can answer questions about past work years later</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Transparency:</strong> Detailed records build customer trust and confidence</span>
+                </div>
+            </div>
+
+            <h4>Quality and Safety Reasons</h4>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Safety Critical Work:</strong> Records prove brake, steering, and suspension work done correctly</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Recalls:</strong> Can identify which vehicles have had recall work completed</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Quality Audits:</strong> Manufacturers audit records during dealership inspections</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Training Evidence:</strong> Apprentices need documented proof of work experience</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Continuous Improvement:</strong> Records identify patterns for training needs</span>
+                </div>
+            </div>
+
+            <h3>What Should Be Recorded</h3>
+
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Information Type</th>
+                        <th>Details to Record</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Vehicle Details</strong></td>
+                        <td>Registration, VIN, make, model, mileage</td>
+                        <td>Identifies specific vehicle and its condition</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Customer Details</strong></td>
+                        <td>Name, contact details, special instructions</td>
+                        <td>Essential for communication and GDPR compliance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Work Requested</strong></td>
+                        <td>What customer asked for, reported symptoms</td>
+                        <td>Proves what was agreed to be done</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Work Carried Out</strong></td>
+                        <td>All tasks completed, procedures followed</td>
+                        <td>Evidence of competent repair</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parts Used</strong></td>
+                        <td>Part numbers, quantities, costs</td>
+                        <td>For invoicing and stock control</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Labour Time</strong></td>
+                        <td>Start/finish times, hours worked</td>
+                        <td>For billing and productivity tracking</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technician Name</strong></td>
+                        <td>Who carried out the work</td>
+                        <td>Accountability and quality tracing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Additional Faults</strong></td>
+                        <td>Problems found during inspection</td>
+                        <td>Advises customer and protects workshop</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Test Results</strong></td>
+                        <td>Diagnostic readings, measurements</td>
+                        <td>Proves fault diagnosis and repair verification</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3>Importance of Working to Agreed Timescales</h3>
+
+            <div class="key-point">
+                <strong>🕐 Why Timescales Matter:</strong>
+                <p style="margin-top: 10px;">Time is money in an automotive workshop. Every job has an agreed completion time that balances customer expectations, business profitability, and realistic working pace.</p>
+            </div>
+
+            <h4>Relationship Between Time and Cost</h4>
+
+            <div class="diagram-container">
+                <div class="diagram-title">⏰ Time = Money in the Workshop</div>
+                <div style="text-align: left; padding: 20px; background: var(--key-bg); border-radius: 8px; margin: 15px 0;">
+                    <p style="margin-bottom: 15px; font-size: 1.1rem;"><strong>Example: Service Job</strong></p>
+                    
+                    <p><strong>Estimated Time:</strong> 2 hours</p>
+                    <p><strong>Labour Rate:</strong> £60 per hour</p>
+                    <p><strong>Expected Cost to Customer:</strong> £120 labour + parts</p>
+                    
+                    <hr style="margin: 15px 0; border: 1px solid var(--primary-color);">
+                    
+                    <p style="margin: 10px 0;"><strong>If job takes 3 hours:</strong></p>
+                    <ul style="margin-left: 30px;">
+                        <li>Workshop loses 1 hour productivity (£60)</li>
+                        <li>Cannot do next job on time</li>
+                        <li>Customer unhappy with delay</li>
+                        <li>Workshop loses profit</li>
+                    </ul>
+                    
+                    <hr style="margin: 15px 0; border: 1px solid var(--primary-color);">
+                    
+                    <p style="margin: 10px 0;"><strong>If job takes 1.5 hours:</strong></p>
+                    <ul style="margin-left: 30px;">
+                        <li>Workshop gains 0.5 hour productivity</li>
+                        <li>Can start next job early</li>
+                        <li>Customer delighted with speed</li>
+                        <li>Workshop increases profit</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h4>Impact on Customer Expectations</h4>
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Why Customers Care About Timescales:</h4>
+                <div class="checklist-item">
+                    <span><strong>Planning:</strong> Customer has arranged their day around collection time</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Work Commitments:</strong> May need car to get to work or appointments</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Alternative Transport:</strong> Hire car, taxi, or lifts may be time-limited</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Trust:</strong> Meeting deadlines builds customer confidence and loyalty</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Inconvenience:</strong> Delays cause stress and disruption to customer's life</span>
+                </div>
+            </div>
+
+            <h4>Impact on the Business</h4>
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">How Timescales Affect the Workshop:</h4>
+                <div class="checklist-item">
+                    <span><strong>Efficiency:</strong> Meeting times means more jobs can be completed per day</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Profitability:</strong> Time estimates build in profit margin - exceeding them loses money</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Planning:</strong> Accurate timescales allow effective workshop scheduling</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Reputation:</strong> Consistently meeting deadlines builds strong business reputation</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Customer Retention:</strong> Reliable service means customers return and recommend others</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Staff Morale:</strong> Completing jobs on time reduces stress and pressure on team</span>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Consequences of Missing Timescales:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Unhappy Customers:</strong> Complaints, bad reviews, lost future business</li>
+                    <li><strong>Knock-On Delays:</strong> One late job delays all subsequent jobs</li>
+                    <li><strong>Wasted Resources:</strong> Staff standing idle or working inefficiently</li>
+                    <li><strong>Increased Costs:</strong> May need to work overtime to catch up</li>
+                    <li><strong>Poor Reputation:</strong> Word spreads that the workshop is unreliable</li>
+                    <li><strong>Financial Loss:</strong> May have to compensate customers or reduce charges</li>
+                </ul>
+            </div>
+
+            <h4>How to Work to Timescales Effectively</h4>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Plan Your Work:</strong> Think through the job before starting, gather tools and parts</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Work Methodically:</strong> Follow logical sequence, don't skip steps</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Avoid Distractions:</strong> Focus on one job at a time</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Report Problems Early:</strong> Tell supervisor immediately if you'll be delayed</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Learn from Experience:</strong> Track how long jobs actually take to improve estimates</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Keep Workspace Organised:</strong> Waste less time looking for tools</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Ask for Help:</strong> Don't struggle alone if stuck - get assistance</span>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Assessment Tip:</strong> When answering questions about records and timescales:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Records:</strong> Mention legal protection, customer service, and business needs</li>
+                    <li><strong>Timescales:</strong> Link time to cost, explain customer impact, mention reputation</li>
+                    <li>Give SPECIFIC examples (e.g., "Records prove brake work was done safely")</li>
+                    <li>Consider MULTIPLE stakeholders (customer, business, technician)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Topic 8: Building Relationships -->
+        <section id="topic8" class="section">
+            <h2>🤝 Topic 8: Building Positive Working Relationships</h2>
+            
+            <h3>Developing Good Working Relationships</h3>
+            
+            <div class="key-point">
+                <strong>🎯 Key Understanding:</strong> Strong working relationships with colleagues and customers are essential for a harmonious, productive workplace. Good relationships improve job satisfaction, teamwork, and business success.
+            </div>
+
+            <h3>How to Develop Positive Relationships with Colleagues</h3>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Key Behaviours:</h4>
+                <div class="checklist-item">
+                    <span><strong>Be Respectful:</strong> Treat everyone with courtesy regardless of their role or experience level</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Communicate Clearly:</strong> Share information, keep people informed, ask questions when unsure</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Be Reliable:</strong> Do what you say you'll do, turn up on time, complete tasks properly</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Offer Help:</strong> Support colleagues when they're busy or facing problems</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Be Positive:</strong> Maintain good attitude even when work is challenging</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Accept Feedback:</strong> Listen to constructive criticism and use it to improve</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Admit Mistakes:</strong> Own up to errors quickly and learn from them</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Show Appreciation:</strong> Thank colleagues for their help and support</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Be Professional:</strong> Maintain appropriate workplace behaviour and language</span>
+                </div>
+            </div>
+
+            <h3>How to Develop Positive Relationships with Customers</h3>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">Customer Service Excellence:</h4>
+                <div class="checklist-item">
+                    <span><strong>Greet Warmly:</strong> Smile, make eye contact, use customer's name</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Listen Actively:</strong> Pay attention to their concerns without interrupting</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Explain Clearly:</strong> Use plain language, avoid jargon, check understanding</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Be Honest:</strong> Give realistic timescales and costs, don't make false promises</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Show Empathy:</strong> Understand that car problems cause stress and inconvenience</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Keep Them Informed:</strong> Update on progress, especially if delays occur</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Present Professionally:</strong> Clean uniform, tidy appearance, professional manner</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Go the Extra Mile:</strong> Small gestures like cleaning windows build loyalty</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Handle Complaints Well:</strong> Stay calm, apologise, find solutions</span>
+                </div>
+            </div>
+
+            <h3>Importance of Accepting Other People's Views and Opinions</h3>
+
+            <div class="key-point">
+                <strong>Why Different Perspectives Matter:</strong>
+                <p style="margin-top: 10px;">Everyone has unique experiences, knowledge, and ways of thinking. Accepting different viewpoints creates a more creative, effective, and pleasant workplace.</p>
+            </div>
+
+            <h4>Benefits of Accepting Different Views</h4>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Better Solutions:</strong> Different perspectives often lead to better problem-solving</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Learning Opportunities:</strong> Colleagues' experiences teach you new approaches and techniques</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Reduced Conflict:</strong> Respecting opinions prevents arguments and workplace tension</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Stronger Teams:</strong> Diverse thinking makes teams more adaptable and innovative</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Personal Growth:</strong> Challenges your own assumptions and broadens your thinking</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Inclusive Culture:</strong> Everyone feels valued and willing to contribute ideas</span>
+                </div>
+            </div>
+
+            <h4>Practical Examples</h4>
+
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Situation</th>
+                        <th>Different Views</th>
+                        <th>Value of Accepting Both</th>
+                    </tr>
+                    <tr>
+                        <td>Best way to remove a seized bolt</td>
+                        <td>• Heat it<br>• Use penetrating oil<br>• Drill it out</td>
+                        <td>Each method works in different situations - knowing all three makes you more capable</td>
+                    </tr>
+                    <tr>
+                        <td>Workshop layout</td>
+                        <td>• Keep tools at each bay<br>• Centralised tool store</td>
+                        <td>Both have pros/cons - discussion leads to hybrid solution</td>
+                    </tr>
+                    <tr>
+                        <td>Customer communication</td>
+                        <td>• Always phone<br>• Use text/email</td>
+                        <td>Different customers prefer different methods - flexibility wins</td>
+                    </tr>
+                    <tr>
+                        <td>Diagnostic approach</td>
+                        <td>• Start with scan tool<br>• Check basics first</td>
+                        <td>Combining both approaches catches more faults efficiently</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Consequences of NOT Accepting Different Views:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Workplace Conflict:</strong> Arguments, tension, poor atmosphere</li>
+                    <li><strong>Missed Solutions:</strong> Dismissing ideas means missing potentially better approaches</li>
+                    <li><strong>Reduced Innovation:</strong> People stop sharing ideas if they're always rejected</li>
+                    <li><strong>Team Breakdown:</strong> Lack of respect damages team cohesion</li>
+                    <li><strong>Poor Morale:</strong> Staff feel undervalued and demotivated</li>
+                    <li><strong>Customer Impact:</strong> Internal conflict shows and affects service quality</li>
+                </ul>
+            </div>
+
+            <h3>Making and Honouring Realistic Commitments</h3>
+
+            <div class="key-point">
+                <strong>What Are Realistic Commitments?</strong>
+                <p style="margin-top: 10px;">Commitments are promises you make to colleagues and customers. Being realistic means only promising what you can actually deliver, considering your skills, time, and resources.</p>
+            </div>
+
+            <h4>Examples of Commitments</h4>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>To Customers:</strong> "Your car will be ready by 4pm today"</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>To Colleagues:</strong> "I'll help you with that gearbox replacement this afternoon"</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>To Supervisor:</strong> "I can complete three services today"</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>To Parts Department:</strong> "I'll return these tools by lunchtime"</span>
+                </div>
+            </div>
+
+            <h4>Why Honouring Commitments Is Important</h4>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">For Customers:</h4>
+                <div class="checklist-item">
+                    <span><strong>Trust:</strong> Customers rely on promises to plan their day</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Loyalty:</strong> Reliability builds repeat business and recommendations</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Satisfaction:</strong> Meeting promises prevents complaints and conflict</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Reputation:</strong> Word spreads about businesses that keep their word</span>
+                </div>
+            </div>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">For Colleagues:</h4>
+                <div class="checklist-item">
+                    <span><strong>Teamwork:</strong> Team relies on each member doing what they said they'd do</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Efficiency:</strong> Broken promises disrupt workflow and planning</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Respect:</strong> Honouring commitments earns colleagues' trust and respect</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Support:</strong> Reliable people get more help when they need it</span>
+                </div>
+            </div>
+
+            <div class="checklist">
+                <h4 style="color: var(--primary-color); margin-bottom: 10px;">For Your Career:</h4>
+                <div class="checklist-item">
+                    <span><strong>Professional Reputation:</strong> Known as someone who can be relied upon</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Promotion Prospects:</strong> Reliability is key quality for advancement</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Job Security:</strong> Dependable staff are valued and kept during difficult times</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>References:</strong> Managers give strong references to reliable workers</span>
+                </div>
+            </div>
+
+            <h4>How to Make Realistic Commitments</h4>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Know Your Limits:</strong> Be honest about your skills and experience level</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Allow Contingency Time:</strong> Build in buffer for unexpected problems</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Check Resources:</strong> Ensure tools, parts, and equipment are available</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Consider Workload:</strong> Don't over-commit when already busy</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Consult Supervisor:</strong> Check commitments are achievable before promising</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Be Specific:</strong> "By 4pm" is better than "later today"</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Under-Promise, Over-Deliver:</strong> Better to finish early than late</span>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Consequences of Breaking Commitments:</strong>
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li><strong>Lost Trust:</strong> Customers and colleagues stop relying on you</li>
+                    <li><strong>Damaged Relationships:</strong> Broken promises harm workplace relationships</li>
+                    <li><strong>Business Loss:</strong> Customers take their vehicles elsewhere</li>
+                    <li><strong>Team Stress:</strong> Colleagues must cover your failures</li>
+                    <li><strong>Poor Reputation:</strong> Known as unreliable - affects career prospects</li>
+                    <li><strong>Disciplinary Action:</strong> Repeated failures may lead to warnings</li>
+                </ul>
+            </div>
+
+            <h4>What to Do If You Can't Keep a Commitment</h4>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <span><strong>Communicate Early:</strong> Inform people as soon as you know there's a problem</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Explain Honestly:</strong> Give genuine reason without making excuses</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Apologise Sincerely:</strong> Take responsibility for the inconvenience caused</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Offer Solutions:</strong> Suggest alternatives or revised timescales</span>
+                </div>
+                <div class="checklist-item">
+                    <span><strong>Learn from It:</strong> Understand what went wrong to avoid repeating</span>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>💡 Assessment Tip:</strong> When answering questions about relationships and commitments:
+                <ul style="margin-top: 10px; margin-left: 20px;">
+                    <li>Give SPECIFIC examples of positive behaviours</li>
+                    <li>Explain the BENEFITS of good relationships (to you, colleagues, customers, business)</li>
+                    <li>Include CONSEQUENCES of poor relationships or broken commitments</li>
+                    <li>Show understanding of DIFFERENT perspectives and why they matter</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="section" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: white;">
+            <h2 style="color: white; border-bottom-color: white;">📝 Assessment Preparation Summary</h2>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 20px; color: white;">To successfully complete Unit 081, you should be able to:</p>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin: 15px 0;">
+                <h3 style="color: white; margin-bottom: 15px;">Question Areas Covered:</h3>
+                <ul style="margin-left: 20px; color: white;">
+                    <li><strong>Q1:</strong> List main departments in automotive environment</li>
+                    <li><strong>Q2:</strong> Explain organisational structures (non-franchised vs franchised)</li>
+                    <li><strong>Q3:</strong> Describe responsibility levels (Trainee, Technician, Supervisor, Manager)</li>
+                    <li><strong>Q4:</strong> Identify information sources and their uses</li>
+                    <li><strong>Q5:</strong> Give examples of legal requirements (MOT, insurance, etc.)</li>
+                    <li><strong>Q6:</strong> Explain importance of correct information and procedures</li>
+                    <li><strong>Q7:</strong> Explain importance of identification codes for parts</li>
+                    <li><strong>Q8:</strong> Describe communication methods and when to use them</li>
+                    <li><strong>Q9:</strong> Give examples of when to communicate with supervisor</li>
+                    <li><strong>Q10:</strong> Explain importance of keeping records</li>
+                    <li><strong>Q11:</strong> Explain importance of working to timescales</li>
+                    <li><strong>Q12:</strong> Describe how to build relationships and accept others' views</li>
+                    <li><strong>Q13:</strong> Explain importance of honouring commitments</li>
+                </ul>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 10px; margin-top: 30px; text-align: center;">
+                <h3 style="color: white; margin-bottom: 15px;">✨ Good Luck with Your Assessment! ✨</h3>
+                <p style="font-size: 1.1rem; color: white;">Use this guide to revise each topic thoroughly. Remember the diagrams will help you visualise the structures and processes. Give detailed, practical answers that demonstrate your understanding of the automotive workplace!</p>
+            </div>
+        </section>
+
+        <!-- Continue in next part... -->
+        
+    </div>
+
+    <button class="print-btn" onclick="window.print()" title="Print this page">🖨️</button>
+    <a href="#" class="back-to-top" title="Back to top">↑</a>
+
+    <script>
+        // Theme Management
+        function setTheme(themeName) {
+            document.body.classList.remove('theme-light', 'theme-dark', 'theme-contrast', 'theme-dyslexia', 'theme-blue', 'theme-green');
+            
+            if (themeName !== 'light') {
+                document.body.classList.add(`theme-${themeName}`);
+            }
+            
+            localStorage.setItem('preferredTheme', themeName);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.theme === themeName) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('preferredTheme') || 'light';
+            setTheme(savedTheme);
+            
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    setTheme(this.dataset.theme);
+                });
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Show/hide buttons
+        const backToTop = document.querySelector('.back-to-top');
+        const printBtn = document.querySelector('.print-btn');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+                printBtn.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+                printBtn.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
